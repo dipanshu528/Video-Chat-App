@@ -9,7 +9,7 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-  const socket = useMemo(() => io("https://video-chat-app-85zn.onrender.com"), []);
+  const socket = useMemo(() => io("https://video-chat-app-9ouk.onrender.com"), []);
   const { peer } = usePeer(); // access peer from PeerProvider
 
   useEffect(() => {

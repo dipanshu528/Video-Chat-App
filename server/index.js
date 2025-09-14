@@ -11,7 +11,7 @@ const server = http.createServer(app);
 
 // Socket.IO server attached to the same HTTP server
 const io = new Server(server, {
-  cors: {  origin: "http://localhost:3000", // your frontend origin
+  cors: {  origin: "https://luminous-scone-529f39.netlify.app", // your frontend origin
     methods: ["GET", "POST"], credentials: true
   }, // allow CORS for testing, adjust in production
 });
