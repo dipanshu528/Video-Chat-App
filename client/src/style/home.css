@@ -1,0 +1,104 @@
+.homepage-container{
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(154,108,255,.25), transparent 60%),
+    radial-gradient(900px 500px at -10% 90%, rgba(108,140,255,.25), transparent 60%),
+    linear-gradient(180deg, #0f1220 0%, #0b0e1a 100%);
+}
+
+/* Glassy card */
+.join-card{
+  width: 100%;
+  max-width: 460px;
+  background: color-mix(in oklab, var(--card) 92%, white 8%);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient border glow */
+.join-card::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius) + 2px);
+  background: linear-gradient(135deg, rgba(108,140,255,.35), rgba(154,108,255,.35));
+  filter: blur(18px);
+  z-index: -1;
+}
+
+.title{
+  margin: 0 0 18px 0;
+  font-size: clamp(20px, 2.2vw + 12px, 28px);
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* Form layout */
+.form{
+  display: grid;
+  gap: 12px;
+}
+
+/* Inputs */
+.input{
+  width: 100%;
+  padding: 14px 14px;
+  background: #0f1326;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, transform .04s;
+}
+
+.input::placeholder{ color: var(--muted); }
+
+.input:hover{
+  border-color: rgba(255,255,255,.15);
+}
+
+.input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px var(--ring);
+}
+
+/* Button */
+.btn{
+  margin-top: 6px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow: 0 10px 24px rgba(108,140,255,.35);
+}
+
+.btn:hover{ filter: brightness(1.05); }
+.btn:active{ transform: translateY(1px) scale(.99); }
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 6px var(--ring), 0 10px 24px rgba(108,140,255,.35);
+}
+
+/* Compact on very small screens */
+@media (max-width: 420px){
+  .join-card{ padding: 22px; }
+  .input, .btn{ padding: 12px 12px; border-radius: 10px; }
+}
+
+/* Optional: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .btn, .input{ transition: none; }
+}

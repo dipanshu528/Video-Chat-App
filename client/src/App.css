@@ -1,0 +1,17 @@
+/* Feel free to put this in App.css or a module */
+:root{
+  --bg: #0f1220;
+  --card: #15192d;
+  --muted: #9aa3b2;
+  --text: #e8eaf1;
+  --accent: #6c8cff;
+  --accent-2: #9a6cff;
+  --ring: rgba(108,140,255,.45);
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{ box-sizing: border-box; }
+
+body { margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+
